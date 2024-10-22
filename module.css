@@ -1,0 +1,211 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFDAB9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal del módulo */
+#modulo-contenedor {
+    box-sizing: border-box; 
+    background-color: #fff;
+    padding:20px 20px 5px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 500px;
+    max-width: 90%;
+    text-align: center;
+}
+
+
+/* Estilo para el título "Progreso" */
+#barra-progreso-label {
+    color: #ff0055;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Barra de progreso */
+#barra-progreso {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+#barra-progreso::-webkit-progress-value {
+    background-color: #4CAF50;
+}
+
+#barra-progreso::-moz-progress-bar {
+    background-color: #4CAF50;
+}
+
+/* Contenedor de la imagen */
+#imagen-container {
+    margin-bottom: 20px;
+}
+
+#imagen {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #DCDCDC;
+}
+
+/* Contenedor de entrada y botón verificar */
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    outline: none;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-container button {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+    background-color: #357ABD;
+}
+
+/* Mensaje de correcto/incorrecto */
+#mensaje {
+    font-size: 18px;
+    font-weight: bold;
+    height: 24px; /* Para mantener el espacio aunque no haya mensaje */
+    margin-bottom: 20px;
+}
+
+/* Contenedor de Cambiar Imagen */
+#cambiar-imagen-container {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+#titulo-cambiar-imagen {
+    color: #4682B4;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#cambiar-imagen-btn {
+    background-color: #FFA500;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cambiar-imagen-btn:hover {
+    background-color: #FF8C00;
+}
+
+#resultados-container button {
+    background-color: #4A90E2; 
+    color: #FFFFFF; 
+    font-size: 16px; 
+    padding: 10px 20px; 
+    margin: 10px; 
+    border-radius: 5px; 
+    border: none; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+#resultados-container button:hover {
+    background-color: #357ABD; 
+}
+
+#resultados-container button:active {
+    background-color: #2D6A9D; 
+}
+
+/* Estilos para el Modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #5c4fd3;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; 
+    max-width: 500px; 
+    border-radius: 8px; 
+    text-align: center; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para el botón 'Listo' */
+#listo-btn {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+#listo-btn:hover {
+    background-color: #45a049; /* Verde oscuro */
+}

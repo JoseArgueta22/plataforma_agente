@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3: Repetir Palabras</title>
+    <link rel="stylesheet" href="module_tres.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Repite las Palabras</h1>
+            <h2>Haz clic en "Seguir" para ver la siguiente palabra.</h2>
+        </header>
+        <main>
+            <div id="barra-progreso">
+                <label id="titulo-progreso" for="progreso">Progreso</label>
+                <progress id="progreso" value="0" max="5"></progress>
+            </div>
+            <div id="palabra-container">
+                <p id="palabra">Palabra</p>
+            </div>
+            <button id="seguir-button">Seguir</button>
+            <button id="escuchar-button">Escuchar</button>
+        </main>
+        <div id="resultados" style="display: none;">
+            <div id="puntos-obtenidos"></div>
+            <div id="palabras-mostradas"></div>
+            <button id="volver-jugar-btn">Volver a Jugar</button>
+            <button id="regresar-btn">Regresar al Inicio</button>
+            <button id="ir-al-modulo-4">Palabras por letra</button>
+            <button id="examen-final-btn">Examen Final</button>
+        </div>
+    </div>
+
+    <div id="modal-sugerencias" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>¡Módulo Completado!</h2>
+            <div id="sugerencias"></div> 
+            <button id="listo-btn">Listo</button>
+        </div>
+    </div>
+    
+    <!-- Modal de Mensaje Final -->
+    <div id="modal-final" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>¡Enhorabuena!</h2>
+            <p>Finalizaste, has reforzado tu pronunciación.</p>
+            <p>¡Recuerda practica para tener mayor fluidez!</p>
+            <button id="listo-btn">Listo</button>
+        </div>
+    </div>
+
+    <script src="modulo_repetir_palabras.js"></script>
+</body>
+</html>

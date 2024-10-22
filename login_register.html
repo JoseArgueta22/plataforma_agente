@@ -1,0 +1,131 @@
+<!-- para entrar: http://localhost/Plataforma_agente_inteligente -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        /* Estilo para centrar los modales */
+        .modal {
+            display: none; /* Ocultar por defecto */
+            position: fixed; /* Fijo en la pantalla */
+            z-index: 1000; /* Enfrente de otros elementos */
+            left: 0;
+            top: 0;
+            width: 100%; /* Completo ancho */
+            height: 100%; /* Completo alto */
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+        }
+
+        .modal-content {
+            background-color: white; /* Fondo blanco del contenido */
+            padding: 20px; /* Espaciado interior */
+            border-radius: 5px; /* Bordes redondeados */
+            width: 300px; /* Ancho del modal */
+            text-align: center; /* Centrar texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Bienvenido a la Plataforma Web</h1>
+        <div class="login-box">
+            <div class="image-container">
+                <img src="images/portada.jpg" alt="Imagen de bienvenida" class="login-image">
+            </div>
+
+  <h2>Iniciar Sesión</h2>
+            <form id="login-form" action="login.php" method="POST" autocomplete="on">
+                <input type="text" name="username" placeholder="Nombre de usuario" id="login-username" required autocomplete="username">
+                <div class="password-container">
+                    <input type="password" name="password" id="login-password" placeholder="Contraseña" required autocomplete="current-password">
+                    <span class="eye-icon" id="login-password-eye" onclick="togglePassword('login-password')">👁️</span>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <div class="register-link">
+                <button class="register-button" onclick="openModal()">Registrarse</button>
+            </div>
+            <div class="recover-link">
+                <a href="#" onclick="openRecoverModal()">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="recover-username-link">
+                <a href="#" onclick="openRecoverUsernameModal()">¿Olvidaste tu nombre de usuario?</a>
+            </div>
+            <div class="pdf-link">
+                <a href="guia.pdf" target="_blank">Manual de Usuario</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Registrarse</h2>
+            <form id="register-form" method="POST" action="register.php">
+                <input type="text" name="nombre" placeholder="Nombre" id="register-nombre" required autocomplete="given-name">
+                <input type="text" name="apellido" placeholder="Apellido" id="register-apellido" required autocomplete="family-name">
+                <input type="text" name="username" placeholder="Nombre de usuario" id="register-username" required autocomplete="username">
+                <div class="password-container">
+                    <input type="password" name="password" id="register-password" placeholder="Contraseña" required autocomplete="new-password">
+                    <span class="eye-icon" id="register-password-eye" onclick="togglePassword('register-password')">👁️</span>
+                </div>
+                <input type="number" name="edad" placeholder="Edad" id="register-edad" required min="1" max="120" autocomplete="off">
+                <label for="pregunta_seguridad">Pregunta de Seguridad</label>
+                <select name="pregunta_seguridad" id="pregunta_seguridad" required autocomplete="off">
+                    <option value="color_favorito">¿Cuál es tu color favorito?</option>
+                    <option value="mascota_infancia">¿Cuál fue el nombre de tu primera mascota?</option>
+                    <option value="un_nombre_del_papa">Ingresa un nombre de alguno de tus papás</option>
+                </select>
+                <input type="text" name="respuesta_seguridad" placeholder="Respuesta a la pregunta de seguridad" id="respuesta_seguridad" required autocomplete="off">
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Restablecer Contraseña -->
+    <div id="recover-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRecoverModal()">&times;</span>
+            <h2>Restablecer Contraseña</h2>
+            <form id="recuperar-form" method="POST" action="recuperar.php">
+                <input type="text" name="username" placeholder="Nombre de usuario" id="recover-username" required autocomplete="username">
+                <input type="text" name="respuesta_seguridad" placeholder="Respuesta a la pregunta de seguridad" id="recover-respuesta" required autocomplete="off">
+                <div class="password-container">
+                    <input type="password" name="nueva_contrasena" id="recover-password" placeholder="Nueva contraseña" required autocomplete="new-password">
+                    <span class="eye-icon" id="recover-password-eye" onclick="togglePassword('recover-password')">👁️</span>
+                </div>
+                <button type="submit">Restablecer Contraseña</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Recuperación de Nombre de Usuario -->
+    <div id="recover-username-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRecoverUsernameModal()">&times;</span>
+            <h2>Recuperar Nombre de Usuario</h2>
+            <form id="recover-username-form" method="POST" action="recuperar_usuario.php">
+                <input type="text" name="respuesta_seguridad" placeholder="Respuesta de seguridad" id="recover-username-respuesta" required autocomplete="off">
+                <div class="password-container">
+                    <input type="password" name="password" id="recover-username-password" placeholder="Contraseña" required autocomplete="current-password">
+                    <span class="eye-icon" id="recover-username-password-eye" onclick="togglePassword('recover-username-password')">👁️</span>
+                </div>
+                <button type="submit">Recuperar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mensaje emergente -->
+    <div id="alert-box" class="alert-box" style="display: none;">
+        <p id="alert-message"></p>
+        <button onclick="closeAlert()">Cerrar</button>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

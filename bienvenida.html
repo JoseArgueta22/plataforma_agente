@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida al Módulo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para el popup */
+        .popup-content {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="popup" id="popup2" style="display: flex;">
+            <div class="popup-content">
+                <h2 id="popup-title">¡Bienvenido al Módulo!</h2>
+                <p id="popup-message"></p>
+                <button onclick="empezarModulo()">Empezar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de carga -->
+    <div id="loading-bar" class="loading-bar" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Cargando...</p>
+    </div>
+
+    <script>
+        // Función para mostrar el mensaje de bienvenida basado en el parámetro del módulo
+        function mostrarMensajeBienvenida() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const modulo = urlParams.get('modulo');
+
+            let title = '';
+            let message = '';
+
+            switch (modulo) {
+                case '1':
+                    title = '¡Bienvenido al Módulo 1!';
+                    message = 'En este módulo encontrarás imágenes conocidas como desconocidas. Recuerda que puedes ingresar las respuestas con ayuda de algún adulto. Cuando estes listo pulsa al botón "Empezar"';
+                    break;
+                case '2':
+                    title = '¡Bienvenido al Módulo 2!';
+                    message = 'En este módulo completarás oraciones con las palabras correctas. No dudes en pedir ayuda si la necesitas. Cuando este preparado pulsa al botón "Empezar"';
+                    break;
+                case '3':
+                    title = '¡Bienvenido al Módulo 3!';
+                    message = 'En este módulo repetirás palabras para practicar tu pronunciación. ¡Disfruta aprendiendo nuevas palabras. Pulsa al botón "Empezar" ';
+                    break;
+                    case '4':
+                    title = '¡Bienvenido al submódulo!';
+                    message = 'En esta sección, deberás seleccionar una letra del abacedario y repetir la palabra que aparecera en pantalla ¡Aprende nuevo vocabulario!. Comienza pulsando el botón "Empezar"';
+                    break;
+                    case '5':
+                    title = '¡Bienvenido aventurero!';
+                    message = 'Has completado los tres modulos principales y es hora de comprobar tu conocimiento. Cuando estes preparado pulsa el botón "Empezar"';
+                    break;
+                default:
+                    title = '¡Bienvenido!';
+                    message = 'Este es un módulo de bienvenida. Prepárate para comenzar.';
+                    break;
+            }
+
+            document.getElementById('popup-title').textContent = title;
+            document.getElementById('popup-message').textContent = message;
+        }
+
+        function empezarModulo() {
+            document.getElementById("loading-bar").style.display = "flex"; // Mostrar barra de carga
+            setTimeout(() => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const modulo = urlParams.get('modulo');
+                let moduloUrl = '';
+
+                switch (modulo) {
+                    case '1':
+                        moduloUrl = 'modulo_asociar_palabras.html'; // Redirige al Módulo 1
+                        break;
+                    case '2':
+                        moduloUrl = 'modulo_completar_oraciones.html'; // Redirige al Módulo 2
+                        break;
+                    case '3':
+                        moduloUrl = 'modulo_repetir.html'; // Redirige al Módulo 3
+                        break;
+                        case '4':
+                        moduloUrl = 'modulo_repetir_letra.html'; // Redirige al Módulo 4
+                        break;
+                        case '5':
+                        moduloUrl = 'examen_final.html'; // Redirige al examen final
+                        break;
+                }
+
+                window.location.href = moduloUrl;
+            }, 1000);
+        }
+
+        // Ejecutar la función para mostrar el mensaje de bienvenida cuando la página cargue
+        window.onload = mostrarMensajeBienvenida;
+    </script>
+</body>
+</html>

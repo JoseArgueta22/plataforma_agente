@@ -1,0 +1,273 @@
+/* Estilos generales para la página principal */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fffc57; /* Fondo */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #4A90E2; /* Azul más suave */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Resplandor sutil */
+    background: linear-gradient(90deg, #4A90E2, #50E3C2);
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7); 
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #D9534F; /* Rojo coral más suave */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.3); 
+    background: linear-gradient(90deg, #4f7fd9, #4323f5);
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7); 
+}
+
+.modules {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los módulos */
+    margin-bottom: 30px;
+}
+
+.module {
+    background-color: #FFFFFF; /* Fondo blanco para los módulos */
+    border: 2px solid #DCDCDC; /* Color de borde más claro */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 300px; /* Tamaño máximo del contenedor */
+    min-width: 220px; /* Tamaño mínimo del contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ajustar el tamaño de las imágenes dentro de los módulos */
+.module img {
+    width: 100%; /* Ajusta la imagen al ancho del módulo */
+    height: auto; /* Mantiene la relación de aspecto */
+    max-height: 200px; /* Limita la altura máxima para evitar imágenes demasiado grandes */
+    object-fit: contain; /* Ajusta la imagen dentro del área del módulo sin recortar */
+    border-radius: 8px; /* Bordes redondeados en las imágenes */
+}
+
+/* Ajustar la alineación de los botones dentro de los módulos */
+.modules button {
+    background-color: #4A90E2; /* Color azul para los botones */
+    color: #FFFFFF;
+    font-size: 16px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px; /* Espacio superior entre la imagen y el botón */
+}
+
+.modules button:hover {
+    background-color: #357ABD; 
+    transform: translateY(-2px); 
+}
+
+.instructions button {
+    background-color: #a234c4; /* Color para los botones de instrucciones */
+    color: #FFFFFF;
+    font-size: 16px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px 45px; /* Espacio alrededor de los botones de instrucciones */
+}
+
+.instructions button:hover {
+    background-color: #FF4500; 
+    transform: translateY(-2px); 
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #F5F5F5; /* Fondo gris claro */
+    border-top: 1px solid #DCDCDC; /* Línea superior más clara */
+}
+
+.exit-button {
+    background-color: #D9534F; /* Color rojo coral para el botón de salir */
+    color: #FFFFFF;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 30px; /* Espacio desde el borde inferior */
+    left: 20px; /* Espacio desde el borde izquierdo */
+    z-index: 1000; 
+}
+
+.exit-button:hover {
+    background-color: #C9302C; 
+}
+
+/* Estilos para el mensaje emergente */
+.popup {
+    display: none; /* Ocultar el popup por defecto */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegurarse de que el popup esté al frente */
+}
+
+.popup-content {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente de color */
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    animation: pop-in 0.5s ease-out; /* Animación para que aparezca */
+}
+
+.popup-content p {
+    font-size: 18px;
+    color: #ffffff; /* Texto en blanco para contraste */
+    margin: 0 0 20px; /* Margen inferior */
+}
+
+.popup-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #ffffff; /* Color blanco */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.popup-content .close-btn:hover {
+    transform: scale(1.2); /* Ampliación al pasar el mouse */
+}
+
+.popup-content .accept-btn {
+    background-color: #4CAF50; 
+    color: white; /* Texto en blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.popup-content .accept-btn:hover {
+    background-color: #45a049; 
+    transform: translateY(-2px); /* Ligeramente hacia arriba */
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilos para la barra de carga circular */
+.loading-bar {
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 9999;
+}
+
+.loading-spinner {
+    border: 8px solid #f3f3f3; /* Color de fondo del círculo */
+    border-radius: 50%;
+    border-top: 8px solid #4CAF50; /* Color del borde superior */
+    width: 60px; /* Tamaño del círculo */
+    height: 60px; /* Tamaño del círculo */
+    animation: spin 1s linear infinite; /* Animación de rotación */
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Estilos del popup */
+.popup2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup2-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #F5F5F5; /* Fondo gris claro */
+    border-top: 1px solid #DCDCDC; /* Línea superior más clara */
+}

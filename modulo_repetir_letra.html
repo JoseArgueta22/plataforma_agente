@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetir Letra: Repetir Palabras con Letras</title>
+    <link rel="stylesheet" href="module_repetir_letra.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="barra-progreso">
+                <label id="titulo-progreso" for="progreso">Progreso</label>
+                <progress id="progreso" value="0" max="5"></progress>
+            </div>
+            <h1>Repite las Palabras</h1>
+            <h2>Selecciona una letra para empezar.</h2>
+        </header>
+        <main>
+            <div id="palabra-container">
+                <p id="palabra">Palabra</p>
+            </div>
+            <button id="seguir-button">Seguir</button>
+            <button id="escuchar-button">Escuchar</button>
+        </main>
+        <div id="resultados" style="display: none;">
+            <div id="puntos-obtenidos"></div>
+            <h2>Palabras Mostradas</h2>
+            <div id="palabras-mostradas"></div>
+            <button id="volver-jugar-btn" style="display: none;">Volver a Jugar</button>
+            <button id="regresar-btn" style="display: none;">Regresar al Inicio</button>
+        </div>
+    </div>
+
+    <!-- Modal de Selección de Letra -->
+    <div id="modal-letras" class="modal" style="display: block;">
+        <div class="modal-content">
+            <h2>Selecciona una letra para empezar</h2>
+            <div id="letras-container">
+                <!-- Aquí se generarán las letras dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Mensaje Final -->
+    <div id="modal-final" class="modal">
+        <div class="modal-content">
+            <h2>¡Felicidades!</h2>
+            <p>Lograste finalizar con exito el módulo de Repetir Palabras.</p>
+            <p>¡Recuerda que puedes seguir practicando para mejorar cada día más!</p>
+            <button id="listo-btn">Listo</button>
+        </div>
+    </div>
+
+    <script src="modulo_repetir_letra.js"></script>
+</body>
+</html>

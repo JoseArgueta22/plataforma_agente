@@ -1,0 +1,215 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Título de bienvenida */
+h1 {
+    margin: 0; 
+    padding-bottom: 10px; 
+}
+
+/* Contenedor principal */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor del formulario de inicio de sesión */
+.login-box-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Ajuste de espacio para el contenedor y el título */
+.login-container {
+    padding-top: 40px; 
+}
+
+/* Ajuste de la imagen */
+.login-image {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%;
+    border: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+/* Estilo del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 20px); /* Ajustado para el ícono del ojo */
+    margin: 0 auto;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Contenedor de contraseña */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Botones */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Enlaces */
+.recover-link a,
+.recover-username-link a {
+    color: #007bff; 
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Estilo para el enlace "Olvidaste tu contraseña?" */
+.recover-link {
+    margin-bottom: 10px; 
+}
+
+.recover-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el enlace "¿Olvidaste tu nombre de usuario?" */
+.recover-username-link a:hover {
+    text-decoration: underline;
+}
+
+/* Texto del botón de registro */
+.register-link button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-link button:hover {
+    text-decoration: underline;
+}
+
+/* Modales */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    text-align: center; 
+    margin-top: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333; 
+}
+
+/* Estilos para el mensaje de alerta */
+.alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    color: #000000;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    z-index: 1000; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.alert-box button {
+    margin-top: 10px;
+}
+
+.alert-box button:hover {
+    background-color: #0056b3;
+}

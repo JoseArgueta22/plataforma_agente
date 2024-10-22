@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Asociar Palabras con Imágenes</title>
+    <link rel="stylesheet" href="module.css">
+</head>
+<body>
+    <!-- Contenedor Principal -->
+    <div id="modulo-contenedor">
+
+        <!-- Barra de Progreso Centrada -->
+        <div id="barra-progreso-container" style="text-align: center; margin-bottom: 20px;">
+            <div id="barra-progreso-label">Progreso</div>
+            <progress id="barra-progreso" max="10" value="0"></progress>
+        </div>
+
+        <!-- Contenedor de la Imagen Centrada y Agrandada -->
+        <div id="imagen-container">
+            <img id="imagen" src="" alt="Imagen">
+        </div>
+
+        <!-- Contenedor de Cambiar Imagen -->
+        <div id="cambiar-imagen-container">
+            <h3 id="titulo-cambiar-imagen">¿No sabes qué es la imagen?</h3>
+            <button id="cambiar-imagen-btn" onclick="cambiarImagen()">Cambiar</button>
+        </div>
+
+        <!-- Contenedor de Respuesta y Botón de Verificación -->
+        <div id="respuesta-container" class="input-container">
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta">
+            <button onclick="verificarRespuesta()">Verificar</button>
+        </div>
+
+        <!-- Mensaje de Respuesta -->
+        <div id="mensaje-container">
+            <p id="mensaje"></p>
+        </div>
+
+<!-- Contenedor de Resultados, Oculto por Defecto -->
+<div id="resultados-container" style="display: none;">
+    <h2>Resultados</h2>
+    <div id="resultados-texto" class="respuesta-container"></div>
+    <button onclick="regresar()">Regresar</button>
+    <button id="reiniciar-modulo-btn" onclick="reiniciarModulo()">Volver a jugar</button>
+    <!-- botón para ir al Módulo 2 -->
+    <button id="ir-al-modulo-2" onclick="irAlModulo2()">Ir al Módulo 2</button>
+</div>
+
+<script>
+    function irAlModulo2() {
+        // Redirige a la página del Módulo 2 con el mensaje de bienvenida
+        window.location.href = 'bienvenida.html?modulo=2';
+    }
+</script>        
+        <!-- Sonidos -->
+        <audio id="sonido-correcto" src="sounds/correcto.wav"></audio>
+        <audio id="sonido-fin-modulo" src="sounds/grito.wav"></audio>
+
+    </div> 
+
+<!-- Modal de Mensaje Final -->
+<div id="modal-final" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>¡Felicidades!</h2>
+        <p>Has completado el módulo con éxito.</p>
+        <p>¡Recuerda que puedes seguir aprendiendo y divirtiéndote con más actividades e imágenes!</p>
+        <button id="listo-btn">Listo</button>
+    </div>
+</div>
+
+    <!-- Modal de Sugerencias -->
+    <div id="modal-sugerencias" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal('modal-sugerencias')">&times;</span>
+            <h2>Palabras Incorrectas y Sugerencias</h2>
+            <div id="sugerencias-texto"></div>
+            <button id="continuar-btn" onclick="cerrarModal('modal-sugerencias')">Continuar</button>
+        </div>
+    </div>
+
+    <script src="modulo_asociar_palabras.js"></script>
+</body>
+</html>

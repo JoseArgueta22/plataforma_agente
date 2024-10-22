@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Final</title>
+    <link rel="stylesheet" href="examen_final.css">
+</head>
+<body>
+    <div id="examen-final-container">
+        <h1>Examen Final Interactivo</h1>
+
+        <!-- Parte 1: Preguntas de Opción Múltiple -->
+        <section id="parte-1">
+            <h2>Parte 1: Selecciona la Palabra Correcta</h2>
+            <div id="preguntas-1"></div>
+        </section>
+
+        <!-- Parte 2: Completar Palabras -->
+        <section id="parte-2" style="display:none;">
+            <h2>Parte 2: Completa la Palabra</h2>
+            <div id="frases-completar"></div>
+        </section>
+
+        <!-- Parte 3: Arrastrar y Soltar -->
+        <section id="parte-3" style="display:none;">
+            <h2>Parte 3: Arrastra la Palabra</h2>
+            <div id="oraciones-arrastrar"></div>
+            <div id="palabras-arrastrar-3"></div>
+        </section>
+
+        <div id="botones-container">
+        <button id="verificar-btn">Verificar</button>
+        <button id="finalizar-btn" style="display:none;">Finalizar Examen</button>
+        <button id="regresar-btn">Regresar a la Página Principal</button>
+        <p id="resultado-final" style="display:none;"></p>
+    </div>
+
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <p id="modal-mensaje"></p>
+        </div>
+    </div>
+    <script src="examen_final.js"></script>
+</body>
+</html>

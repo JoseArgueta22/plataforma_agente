@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Completar Oraciones</title>
+    <link rel="stylesheet" href="module_dos.css">
+</head>
+<body>
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <!-- Barra de Progreso -->
+        <div id="barra-progreso">
+            <div class="barra-progreso-titulo">Progreso</div>
+            <progress id="progreso" value="0" max="100"></progress> 
+        </div>
+
+        <!-- Contenido Principal -->
+        <header>
+            <h1>Completa la Oración</h1>
+            <h2>Selecciona la palabra correcta para completar la oración</h2>
+        </header>
+
+        <main>
+            <!-- Contenedor de la Oración Incompleta -->
+            <div id="oracion-container">
+                <p id="oracion-incompleta">El <span id="espacio-palabra">______</span> es muy rápido.</p>
+                <p id="mensaje-cambiar-oracion">¿No sabes qué palabra es?</p>
+                <button id="cambiar-oracion-btn" onclick="cambiarOracion()">Cambiar oración</button>
+                <p id="mensaje"></p> 
+            </div>
+
+            <!-- Contenedor de Opciones de Respuesta -->
+            <div id="opciones-container">
+                <!-- Los botones se generarán dinámicamente desde JavaScript -->
+            </div>
+        </main>
+
+        <!-- Contenedor de Resultados, Oculto por Defecto -->
+        <div id="resultados-container" style="display: none;">
+            <h2>Tus resultados</h2>
+            <div id="resultados-texto" class="respuesta-container"></div>
+            <button onclick="regresarAlInicio()">Regresar al Inicio</button>
+            <button id="reiniciar-modulo-btn" onclick="reiniciarModulo()">Volver a jugar</button>
+            <button id="ir-al-modulo-3" onclick="irAlModulo3()">Ir al Módulo 3</button>
+        </div>
+
+        <!-- Sonidos -->
+        <audio id="sonido-correcto" src="sounds/correcto.wav"></audio>
+        <audio id="sonido-fin-modulo" src="sounds/grito.wav"></audio>
+    </div>
+
+    <label for="nivel-agente">Elige el nivel del agente:</label>
+<select id="nivel-agente" onchange="cambiarNivelAgente()">
+    <option value="Preciso">Preciso</option>
+    <option value="Equilibrado" selected>Equilibrado</option>
+    <option value="Creativo">Creativo</option>
+</select>
+
+    <!-- Modal de Mensaje Final -->
+<div id="modal-final" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="cerrar-modal-btn">&times;</span> 
+        <h2>¡Felicidades!</h2>
+        <p>Has finalizado el módulo con éxito.</p>
+        <p>¡Recuerda que puedes seguir aprendiendo y divirtiéndote con nuevas oraciones!</p>
+        <button id="listo-btn">Listo</button>
+    </div>
+</div>
+
+
+    <script src="modulo_completar_oraciones.js"></script>
+</body>
+</html>
