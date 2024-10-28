@@ -3,7 +3,7 @@ require 'db_connection.php'; // Conexión a la base de datos
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $respuesta_seguridad = mysqli_real_escape_string($conn, $_POST['respuesta_seguridad']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']); // Sin encriptar
 
     // Consultar si existe un usuario con la respuesta de seguridad proporcionada
     $query = "SELECT * FROM usuarios WHERE respuesta_seguridad = '$respuesta_seguridad'";
@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
 
-        // Verificar la contraseña (usando la función password_verify)
-        if (password_verify($password, $row['contrasena'])) {
+        // Verificar la contraseña sin encriptar
+        if ($password === $row['contrasena']) {
             // Si la contraseña es correcta, mostrar el nombre de usuario
             echo "Tu nombre de usuario es: " . htmlspecialchars($row['nombre_usuario']);
         } else {
@@ -24,3 +24,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
